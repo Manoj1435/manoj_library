@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<center>
+    <h3 style="margin: 24px 0px;">Add New Book Library </h3>
+</center>
+
+<section>
+
+    <form action=" {% url 'book_library' %} " method="POST" class="post-form">
+        {% csrf_token %}
+        <div class="container">
+            <br>
+            <!-- <div class="form-group row">
+                <label for="" class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                </div>
+            </div> -->
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Book Id:</label>
+                <div class="col-sm-4">
+                    {{form.bid}}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Book Name:</label>
+                <div class="col-sm-4">
+                    {{form.bname}}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Book Author:</label>
+                <div class="col-sm-4">
+                    {{form.aname}}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Book Category:</label>
+                <div class="col-sm-4">
+                    {{form.categ}}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary">submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</section>
+
+{% endblock content %}

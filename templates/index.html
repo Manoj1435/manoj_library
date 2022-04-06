@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<img src="{% static 'images/Library.jpg' %}" alt="" height="500px" width="100%">
+<div class="heading">
+  <center>
+    <h3>Library Management System</h3>
+  </center>
+</div>
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-6 adminp">
+        <img src="{% static 'images/admin.png' %}" alt="" height="200px" width="50%"> <br>
+        <div class="loglib">
+          <a href="{% url 'signin' %}" class="btn btn-primary">Admin Panel</a>
+        </div>
+      </div>
+
+      <div class="col col-lg-6">
+        <img src="{% static 'images/students.jpg' %}" alt="" height="200px" width="50%"> <br>
+        <div class="loglib">
+          <a href="{% url 'student' %} " class="btn btn-primary">Student Panel</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h3>Library Maanagement System</h3>
+
+<section>
+
+    <form action="/update/{{book.id}}" method="POST" class="post-form">
+        {% csrf_token %}
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label for="" class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Edit details</h3>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Book Id:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="bid" id="id_bid" required maxlength="20" value="{{book.bid}}">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Book Name:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="bname" id="id_bname" required maxlength="20" value="{{book.bname}}">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Book Author:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="aname" id="id_aname" required maxlength="20" value="{{book.aname}}">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Book Category:</label>
+                <div class="col-sm-4">
+                    <input type="text" name="categ" id="id_categ" required maxlength="20" value="{{book.categ}}">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-success">Update</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</section>
+
+{% endblock content %}
